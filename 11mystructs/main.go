@@ -5,17 +5,18 @@ import "fmt"
 func main() {
 	fmt.Println("Structs in golang")
 	// no inheritance in golang; No super or parent
-
-	hitesh := User{"Hitesh", "hitesh@go.dev", true, 16}
-	fmt.Println(hitesh)
-	fmt.Printf("hitesh details are: %+v\n", hitesh)
-	fmt.Printf("Name is %v and email is %v.", hitesh.Name, hitesh.Email)
-
+	var dexter = Pet{"dexter", "dog", 12, behaviour{true, false}}
+	fmt.Printf("dexter %+v", dexter)
 }
 
-type User struct {
-	Name   string
-	Email  string
-	Status bool
-	Age    int
+type Pet struct {
+	Name string
+	Type string
+	age  int
+	behaviour
+}
+
+type behaviour struct {
+	isFriendly bool
+	softSpoken bool
 }
